@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyr45e2mwqyqv"]
+
+[ext_resource type="Texture2D" uid="uid://booac114hw8xw" path="res://Sprites/player2/Tesla1.png" id="1_df316"]
+
+[node name="Player2" type="CharacterBody2D"]
+
+[node name="Tesla1" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_df316")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 0.785398
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(0.0802212, 344.763, -41.3268, 302.331, -60.7507, 275.174, -118.085, 226.115, -141.515, 186.953, -159.839, 108.214, -151.908, 36.8419, -15.0964, -328.847, -9.64465, -334.098, 9.72218, -334.162, 14.5326, -329.272, 152.528, 36.1803, 160.872, 111.402, 140.876, 187.236, 117.882, 226.022, 61.3816, 276.832, 41.5454, 302.61)
