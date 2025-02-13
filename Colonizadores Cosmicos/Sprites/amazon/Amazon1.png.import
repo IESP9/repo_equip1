@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://booac114hw8xw"
-path="res://.godot/imported/Tesla1.png-d00e326ee0bc4f1a09c854d5d2f44e4f.ctex"
+uid="uid://rf4delt3ara7"
+path="res://.godot/imported/Amazon1.png-87b1b2e3e62e3db3e6e95e6aa9b207c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player2/Tesla1.png"
-dest_files=["res://.godot/imported/Tesla1.png-d00e326ee0bc4f1a09c854d5d2f44e4f.ctex"]
+source_file="res://Sprites/amazon/Amazon1.png"
+dest_files=["res://.godot/imported/Amazon1.png-87b1b2e3e62e3db3e6e95e6aa9b207c2.ctex"]
 
 [params]
 

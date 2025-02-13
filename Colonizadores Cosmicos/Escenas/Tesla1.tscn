@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bop0j1et3bhsg"]
+
+[ext_resource type="Texture2D" uid="uid://rf4delt3ara7" path="res://Sprites/amazon/Amazon1.png" id="1_fgn1j"]
+[ext_resource type="PackedScene" uid="uid://c2814bhlow0j8" path="res://Escenas/ESCENAS NODOS/partuculas_vuelo.tscn" id="2_2v2do"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yw23"]
+atlas = ExtResource("1_fgn1j")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41krw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yw23")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player3" type="CharacterBody2D" groups=["enemigos de aliens"]]
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_41krw")
+
+[node name="partuculas vuelo" parent="AnimatedSprite2D" instance=ExtResource("2_2v2do")]
+show_behind_parent = true
+position = Vector2(-116, 162)
+scale = Vector2(1.2, 1.2)
+
+[node name="partuculas vuelo2" parent="AnimatedSprite2D" instance=ExtResource("2_2v2do")]
+show_behind_parent = true
+position = Vector2(-58, 191)
+scale = Vector2(1.8, 1.8)
+
+[node name="partuculas vuelo3" parent="AnimatedSprite2D" instance=ExtResource("2_2v2do")]
+show_behind_parent = true
+position = Vector2(116, 162)
+scale = Vector2(1.2, 1.2)
+
+[node name="partuculas vuelo4" parent="AnimatedSprite2D" instance=ExtResource("2_2v2do")]
+show_behind_parent = true
+position = Vector2(58, 191)
+scale = Vector2(1.8, 1.8)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-133.028, 160.128, -185.13, 108.07, -185.105, -25.9857, -151.511, -109.849, -67.0032, -193.048, 0.0483131, -210.293, 66.7145, -193.363, 151.938, -108.313, 184.975, -25.9899, 185.194, 108.18, 133.093, 160.072, 84.0344, 193.083, 0.0199738, 210.799, -83.865, 193.149)
