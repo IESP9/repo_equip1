@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://77o6s0chs08v"]
+
+[ext_resource type="Texture2D" uid="uid://b47fd6c62strm" path="res://Sprites/Background/stars_milky_way.png" id="1_8kph0"]
+[ext_resource type="PackedScene" uid="uid://dhji3k2wb1tl3" path="res://Escenas/Amazon1.tscn" id="2_7qmnn"]
+[ext_resource type="PackedScene" uid="uid://4yly08iku4qj" path="res://Escenas/disparos Amazon.tscn" id="3_nobil"]
+[ext_resource type="PackedScene" path="res://Escenas/HUD.tscn" id="4_drs0k"]
+[ext_resource type="PackedScene" uid="uid://b7ppdxc412o4b" path="res://Escenas/Alien1.tscn" id="5_nevfj"]
+[ext_resource type="Script" path="res://Scripts/enemigo.gd" id="6_35v8a"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5p1lb"]
+resource_local_to_scene = true
+a = Vector2(1174, -321)
+b = Vector2(-43, -323)
+
+[node name="Main" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+process_mode = 3
+process_priority = 1
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+rotation = -1.5708
+autoscroll = Vector2(150, 0)
+repeat_times = 22
+
+[node name="StarsMilkyWay" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_8kph0")
+
+[node name="Amazon1" parent="." instance=ExtResource("2_7qmnn")]
+
+[node name="restartbalas" type="CollisionShape2D" parent="Amazon1"]
+position = Vector2(-575, -300)
+shape = SubResource("SegmentShape2D_5p1lb")
+
+[node name="disparos amazon" parent="Amazon1" instance=ExtResource("3_nobil")]
+position = Vector2(0, -10)
+
+[node name="Timer" type="Timer" parent="Amazon1/disparos amazon"]
+wait_time = 10.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="Amazon1"]
+position = Vector2(0, -277)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="HUD" parent="Amazon1/Camera2D" instance=ExtResource("4_drs0k")]
+unique_name_in_owner = true
+offset_left = 423.0
+offset_top = -323.0
+offset_right = 575.0
+offset_bottom = -209.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="alien" parent="." groups=["enemigos de humanos"] instance=ExtResource("5_nevfj")]
+position = Vector2(0, -500)
+rotation = -3.14159
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_35v8a")
+
+[connection signal="timeout" from="Amazon1/disparos amazon/Timer" to="Amazon1/disparos amazon" method="_on_timer_timeout"]
