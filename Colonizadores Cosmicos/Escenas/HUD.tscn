@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://doosiyl70s828"]
 
-[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_hvef2"]
+[ext_resource type="Script" path="res://Scripts/escenas/hud.gd" id="1_hvef2"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -47,6 +47,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Combustible" type="ProgressBar" parent="BoxContainer"]
-texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
+min_value = 0.01
+value = 0.01
+
+[node name="Disparos" type="Label" parent="BoxContainer"]
+layout_mode = 2

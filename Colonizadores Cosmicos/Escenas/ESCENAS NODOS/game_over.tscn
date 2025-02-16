@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4ftbmi8lawnr"]
+
+[ext_resource type="FontFile" uid="uid://broig3dp0lwy5" path="res://Font/ThaleahFat.ttf" id="1_hn2vb"]
+[ext_resource type="Script" path="res://Scripts/escenas/game_over.gd" id="1_wccc4"]
+
+[sub_resource type="Theme" id="Theme_de3g6"]
+default_base_scale = 0.95
+default_font = ExtResource("1_hn2vb")
+default_font_size = 30
+
+[node name="GameOver" type="CanvasLayer"]
+offset = Vector2(0, -277)
+transform = Transform2D(1, 0, 0, 1, 0, -277)
+
+[node name="GameOverPanel" type="Control" parent="."]
+texture_filter = 1
+texture_repeat = 1
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -651.0
+offset_top = -601.0
+offset_right = -501.0
+offset_bottom = -501.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+mouse_filter = 2
+theme = SubResource("Theme_de3g6")
+script = ExtResource("1_wccc4")
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_right = 147.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_hn2vb")
+theme_override_font_sizes/font_size = 33
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+
+[node name="Restart" type="Button" parent="GameOverPanel"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.345
+anchor_right = 1.0
+anchor_bottom = 0.655
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_hn2vb")
+text = "RESTART"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exit" type="Button" parent="GameOverPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.69
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_hn2vb")
+text = "EXIT"
+icon_alignment = 1
+expand_icon = true
