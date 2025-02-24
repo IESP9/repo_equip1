@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://4yly08iku4qj"]
+
+[ext_resource type="Script" path="res://Scripts/Naves/utilidades de naves/disparos.gd" id="1_nl6es"]
+[ext_resource type="PackedScene" uid="uid://bf6o6qy8hmn3y" path="res://Escenas/ESCENAS NODOS/bala.tscn" id="2_71l8r"]
+
+[node name="disparos" type="Node2D"]
+script = ExtResource("1_nl6es")
+
+[node name="Bala7" parent="." instance=ExtResource("2_71l8r")]
+position = Vector2(-88, -58)
+
+[node name="Bala8" parent="." instance=ExtResource("2_71l8r")]
+position = Vector2(-59, -58)
+
+[node name="Bala9" parent="." instance=ExtResource("2_71l8r")]
+position = Vector2(-31, -58)
+
+[node name="Bala10" parent="." instance=ExtResource("2_71l8r")]
+position = Vector2(33, -58)
+
+[node name="Bala11" parent="." instance=ExtResource("2_71l8r")]
+position = Vector2(61, -58)
+
+[node name="Bala12" parent="." instance=ExtResource("2_71l8r")]
+position = Vector2(90, -57)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

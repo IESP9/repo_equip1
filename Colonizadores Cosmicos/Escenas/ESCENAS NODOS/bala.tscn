@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf6o6qy8hmn3y"]
+[gd_scene load_steps=7 format=3 uid="uid://bf6o6qy8hmn3y"]
 
 [ext_resource type="Texture2D" uid="uid://c5bpkot8r62be" path="res://Sprites/Laser Sprites/01.png" id="1_8eh07"]
-[ext_resource type="Script" path="res://Scripts/Naves/utilidades de naves/BalaHumana.gd" id="1_xln8y"]
 [ext_resource type="Texture2D" uid="uid://eap0ytc12trb" path="res://Sprites/Laser Sprites/08.png" id="2_doq8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kcug"]
@@ -40,10 +39,10 @@ animations = [{
 radius = 6.0
 height = 16.0
 
-[node name="Bala" type="Area2D"]
+[node name="Bala" type="CharacterBody2D"]
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
-script = ExtResource("1_xln8y")
+motion_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xpcho")

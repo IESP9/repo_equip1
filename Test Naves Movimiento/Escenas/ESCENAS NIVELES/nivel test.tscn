@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://77o6s0chs08v"]
+
+[ext_resource type="PackedScene" uid="uid://dayujcpq7mjuw" path="res://Escenas/ESCENAS NODOS/background.tscn" id="1_u7oel"]
+[ext_resource type="Texture2D" uid="uid://b47fd6c62strm" path="res://Sprites/Background/stars_milky_way.png" id="2_ktvuu"]
+[ext_resource type="PackedScene" uid="uid://dhji3k2wb1tl3" path="res://Escenas/ESCENAS NODOS/Amazon1.tscn" id="3_n11qt"]
+[ext_resource type="PackedScene" uid="uid://4yly08iku4qj" path="res://Escenas/ESCENAS NODOS/disparos Amazon.tscn" id="4_kohpl"]
+[ext_resource type="PackedScene" uid="uid://doosiyl70s828" path="res://Escenas/HUD.tscn" id="5_5a0u5"]
+[ext_resource type="PackedScene" uid="uid://b7ppdxc412o4b" path="res://Escenas/ESCENAS NODOS/Alien1.tscn" id="6_bxiru"]
+[ext_resource type="PackedScene" uid="uid://bf6o6qy8hmn3y" path="res://Escenas/ESCENAS NODOS/bala.tscn" id="7_u7oel"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5p1lb"]
+resource_local_to_scene = true
+a = Vector2(1174, -321)
+b = Vector2(-43, -323)
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_u7oel")]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+process_mode = 3
+process_priority = 1
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+visible = false
+rotation = -1.5708
+autoscroll = Vector2(150, 0)
+repeat_times = 22
+
+[node name="StarsMilkyWay" type="Sprite2D" parent="Parallax2D"]
+visible = false
+texture = ExtResource("2_ktvuu")
+
+[node name="Amazon1" parent="." instance=ExtResource("3_n11qt")]
+
+[node name="restartbalas" type="CollisionShape2D" parent="Amazon1"]
+position = Vector2(-575, -350)
+shape = SubResource("SegmentShape2D_5p1lb")
+
+[node name="disparos amazon" parent="Amazon1" groups=["enemigos de aliens"] instance=ExtResource("4_kohpl")]
+position = Vector2(0, -10)
+
+[node name="Timer2" type="Timer" parent="Amazon1/disparos amazon"]
+wait_time = 10.0
+autostart = true
+
+[node name="reload_timer2" type="Timer" parent="Amazon1/disparos amazon"]
+wait_time = 5.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="Amazon1"]
+position = Vector2(0, -277)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="HUD" parent="Amazon1/Camera2D" instance=ExtResource("5_5a0u5")]
+unique_name_in_owner = true
+offset_left = 423.0
+offset_top = -323.0
+offset_right = 575.0
+offset_bottom = -209.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="alien" parent="Amazon1" instance=ExtResource("6_bxiru")]
+position = Vector2(0, -500)
+rotation = -3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="Bala" parent="Amazon1/alien" groups=["enemigos de humanos"] instance=ExtResource("7_u7oel")]
+position = Vector2(0, -170)
+scale = Vector2(1.4, 1.4)
+
+[node name="Timer2" type="Timer" parent="Amazon1/alien"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Amazon1/disparos amazon/Timer2" to="Amazon1/disparos amazon" method="_on_timer_timeout"]
+[connection signal="timeout" from="Amazon1/disparos amazon/reload_timer2" to="Amazon1/disparos amazon" method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="Amazon1/alien/Timer2" to="Amazon1/alien" method="_on_timer_2_timeout"]

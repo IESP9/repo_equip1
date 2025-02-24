@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhji3k2wb1tl3"]
+
+[ext_resource type="Texture2D" uid="uid://booac114hw8xw" path="res://Sprites/tesla/Tesla1.png" id="1_df316"]
+[ext_resource type="Script" path="res://Scripts/Naves/player.gd" id="1_gvjro"]
+[ext_resource type="PackedScene" uid="uid://c2814bhlow0j8" path="res://Escenas/ESCENAS NODOS/partuculas_vuelo.tscn" id="3_ll25u"]
+
+[node name="Amazon1" type="Area2D" groups=["enemigos de aliens"]]
+script = ExtResource("1_gvjro")
+
+[node name="Tesla1" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_df316")
+
+[node name="partuculas vuelo" parent="Tesla1" instance=ExtResource("3_ll25u")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(-135.344, 33.6425)
+scale = Vector2(0.528314, 0.503774)
+
+[node name="partuculas vuelo2" parent="Tesla1" instance=ExtResource("3_ll25u")]
+show_behind_parent = true
+position = Vector2(-121.26, 48.7495)
+scale = Vector2(0.8, 0.8)
+
+[node name="partuculas vuelo3" parent="Tesla1" instance=ExtResource("3_ll25u")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(-85.6975, 55.9961)
+
+[node name="partuculas vuelo4" parent="Tesla1" instance=ExtResource("3_ll25u")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(-42.4046, 70.2283)
+scale = Vector2(1.2, 1.2)
+
+[node name="partuculas vuelo5" parent="Tesla1" instance=ExtResource("3_ll25u")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(42.405, 70.228)
+scale = Vector2(1.2, 1.2)
+
+[node name="partuculas vuelo6" parent="Tesla1" instance=ExtResource("3_ll25u")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(85.698, 55.996)
+
+[node name="partuculas vuelo7" parent="Tesla1" instance=ExtResource("3_ll25u")]
+show_behind_parent = true
+position = Vector2(121.26, 48.749)
+scale = Vector2(0.8, 0.8)
+
+[node name="partuculas vuelo8" parent="Tesla1" instance=ExtResource("3_ll25u")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(135.344, 33.643)
+scale = Vector2(0.528314, 0.503774)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 0.785398
+polygon = PackedVector2Array(-37.899, 63.959, -77.163, 74.3346, -83.4348, 68.9164, -94.6938, 48.6942, -99.5605, 25.5729, -79.8204, 5.86105, -58.3776, -15.5818, -39.14, -9.05228, -38.9259, -18.6411, -29.7148, -28.0019, -18.1012, -38.5749, -7.29901, -38.909, -13.4239, -59.0656, 6.39856, -79.3336, 26.3324, -100.158, 48.4819, -93.7935, 69.2993, -83.1641, 75.3699, -76.832, 62.8948, -36.8969, 33.5387, 23.656, 23.6725, 33.5223)

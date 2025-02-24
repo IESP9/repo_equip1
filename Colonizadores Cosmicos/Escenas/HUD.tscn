@@ -51,6 +51,3 @@ layout_mode = 2
 size_flags_vertical = 3
 min_value = 0.01
 value = 0.01
-
-[node name="Disparos" type="Label" parent="BoxContainer"]
-layout_mode = 2

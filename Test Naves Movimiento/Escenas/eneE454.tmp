@@ -1,0 +1,525 @@
+[gd_scene load_steps=12 format=3 uid="uid://byg5ijsvc3bnj"]
+
+[ext_resource type="Texture2D" uid="uid://drlymrbq076yq" path="res://Sprites/player1/Amazon.png" id="1_ly2u5"]
+[ext_resource type="Script" path="res://Scripts/enemigo.gd" id="1_xphfo"]
+[ext_resource type="Texture2D" uid="uid://cxoo0glnily2k" path="res://Sprites/Vuelo/Blue.png" id="2_0nljl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba6ag"]
+atlas = ExtResource("1_ly2u5")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_024qm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba6ag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idavf"]
+atlas = ExtResource("2_0nljl")
+region = Rect2(0, 0, 127, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rmsy"]
+atlas = ExtResource("2_0nljl")
+region = Rect2(127, 0, 127, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vsvc"]
+atlas = ExtResource("2_0nljl")
+region = Rect2(254, 0, 127, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76eba"]
+atlas = ExtResource("2_0nljl")
+region = Rect2(381, 0, 127, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8a5x"]
+atlas = ExtResource("2_0nljl")
+region = Rect2(508, 0, 127, 123)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dh8i0"]
+animations = [{
+"frames": [{
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_idavf")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_idavf")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_8rmsy")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_8rmsy")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_0vsvc")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_0vsvc")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_76eba")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_76eba")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_b8a5x")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_b8a5x")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_idavf")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_idavf")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_8rmsy")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_8rmsy")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_0vsvc")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_0vsvc")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_76eba")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_76eba")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_b8a5x")
+}, {
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_b8a5x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[node name="Enemigo" type="CharacterBody2D"]
+script = ExtResource("1_xphfo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = -0.785398
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_024qm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-85.1128, -75.7755)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-90.3696, -66.1696)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-157.067, -28.6149)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-162.297, -14.4211)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-156.886, -4.47079)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-209.171, 37.235)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-214.321, 47.3126)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-214.789, 56.46)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-175.771, 99.5611)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-177.176, 111.499)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-175.459, 123.437)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D44" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-80.1774, 185.234)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D45" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-71.5155, 176.108)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-223.998, 189.329)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-228.836, 201.577)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-228.836, 201.577)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-85.2542, -52.5683)
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-56.7125, -96.4425)
+rotation = 1.51179
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D40" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-180.867, 28.976)
+rotation = 1.51179
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D41" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-123.121, 137.446)
+rotation = 1.51179
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D42" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(22.8201, 108.243)
+rotation = 1.51179
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D46" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-128.108, -38.5571)
+rotation = 1.51179
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D36" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(61.4051, 37.0591)
+rotation = 1.51179
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D37" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(70.8545, 37.059)
+rotation = 1.51179
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-121.087, 110.925)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D38" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(37.9781, 127.613)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D43" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-137.623, 123.18)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D39" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-28.9553, 180.544)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-107.821, -23.4947)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-36.4956, -71.7122)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-37.432, -61.7896)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(95.6988, 56.1959)
+rotation = 3.0837
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-124.004, 176.322)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-112.463, 175.908)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-99.9491, 175.079)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D25" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-57.262, 213.063)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D26" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-47.946, 213.201)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D27" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-38.2128, 208.781)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D30" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(4.30958, 156.632)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D31" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(13.4965, 161.587)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D32" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(27.1457, 156.893)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D33" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(52.0816, 86.2311)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D34" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(66.2557, 90.403)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D35" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(74.6552, 85.7096)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D28" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-202.009, 229.5)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="AnimatedSprite2D29" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(-189.495, 223.423)
+rotation = 4.77306
+scale = Vector2(0.264157, 0.251887)
+sprite_frames = SubResource("SpriteFrames_dh8i0")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 0.0033224
+scale = Vector2(0.4, 0.4)
+skew = -0.00664449
+polygon = PackedVector2Array(0.0802212, 344.763, -41.3268, 302.331, -60.7507, 275.174, -118.085, 226.115, -141.515, 186.953, -159.839, 108.214, -151.908, 36.8419, -82.7643, -147.975, -70.4123, -158.204, -15.0964, -328.847, -9.64465, -334.098, 1.66526, -272.034, 9.72218, -334.162, 14.5326, -329.272, 72.5578, -158.367, 82.9264, -148.145, 152.528, 36.1803, 160.872, 111.402, 140.876, 187.236, 117.882, 226.022, 61.3816, 276.832, 41.5454, 302.61)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

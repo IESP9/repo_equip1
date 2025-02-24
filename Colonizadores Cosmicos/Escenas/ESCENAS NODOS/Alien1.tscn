@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://drlymrbq076yq" path="res://Sprites/marciano/Marciano.png" id="1_3ekb0"]
 [ext_resource type="Script" path="res://Scripts/Naves/enemigo.gd" id="1_8avxp"]
 [ext_resource type="Texture2D" uid="uid://cxoo0glnily2k" path="res://Sprites/Vuelo/Blue.png" id="2_rewyg"]
+[ext_resource type="Script" path="res://Escenas/ESCENAS NODOS/seguir.gd" id="4_uvwio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ba6ag"]
 atlas = ExtResource("1_3ekb0")
@@ -106,32 +107,6 @@ animations = [{
 "name": &"default",
 "speed": 60.0
 }]
-
-[sub_resource type="GDScript" id="GDScript_01tyn"]
-script/source = "class_name seguir extends Node
-
-@export var speed: float = 40  # Velocidad de movimiento
-@export var shoot_interval: float = 5.0  # Intervalo entre disparos (5 segundos)
-const UPWARD_SPEED = -10.0  # Velocidad constante hacia arriba (en 2D, Y positivo es hacia abajo)
-
-@onready var Heroe: CharacterBody2D = $\"../Amazon1\"
-@onready var parent: CharacterBody2D = $\"..\" #su mismo parente
-
-var start_position
-
-func _ready() -> void:
-	start_position = parent.position
-
-func update_velocity():
-	pass
-
-func _physics_process(_delta) -> void:
-	update_velocity()
-	parent.move_and_slide()
-
-func disable() -> void:
-	process_mode = ProcessMode.PROCESS_MODE_DISABLED 
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvwio"]
 size = Vector2(98, 1375)
@@ -597,7 +572,9 @@ skew = -0.00664449
 polygon = PackedVector2Array(0.0802212, 344.763, -41.3268, 302.331, -60.7507, 275.174, -118.085, 226.115, -141.515, 186.953, -159.839, 108.214, -151.908, 36.8419, -82.7643, -147.975, -70.4123, -158.204, -15.0964, -328.847, -9.64465, -334.098, 1.66526, -272.034, 9.72218, -334.162, 14.5326, -329.272, 72.5578, -158.367, 82.9264, -148.145, 152.528, 36.1803, 160.872, 111.402, 140.876, 187.236, 117.882, 226.022, 61.3816, 276.832, 41.5454, 302.61)
 
 [node name="seguir" type="Node" parent="."]
-script = SubResource("GDScript_01tyn")
+script = ExtResource("4_uvwio")
+speed = null
+shoot_interval = null
 
 [node name="AreadeSeguir" type="Area2D" parent="."]
 collision_layer = 0
@@ -606,6 +583,5 @@ collision_layer = 0
 position = Vector2(0, -552.5)
 shape = SubResource("RectangleShape2D_uvwio")
 
-[node name="Timer" type="Timer" parent="."]
-
+[connection signal="area_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_area_entered"]
 [connection signal="body_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_body_entered"]

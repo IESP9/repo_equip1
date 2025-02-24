@@ -1,5 +1,6 @@
 extends Control
 @onready var start: Button = $BoxContainer/START
+@onready var load: Button = $BoxContainer/LOAD
 @onready var exit: Button = $BoxContainer/EXIT
 
 

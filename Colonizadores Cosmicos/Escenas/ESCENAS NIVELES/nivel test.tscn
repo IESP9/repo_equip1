@@ -41,12 +41,8 @@ shape = SubResource("SegmentShape2D_5p1lb")
 [node name="disparos amazon" parent="Amazon1" instance=ExtResource("4_kohpl")]
 position = Vector2(0, -10)
 
-[node name="Timer2" type="Timer" parent="Amazon1/disparos amazon"]
+[node name="Timer" type="Timer" parent="Amazon1/disparos amazon"]
 wait_time = 10.0
-autostart = true
-
-[node name="reload_timer2" type="Timer" parent="Amazon1/disparos amazon"]
-wait_time = 5.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="Amazon1"]
@@ -69,10 +65,15 @@ position = Vector2(0, -500)
 rotation = -3.14159
 scale = Vector2(0.5, 0.5)
 platform_on_leave = 2
+speed = 40.0
+shoot_interval = 5.0
+left_limit = 220.0
+right_limit = 220.0
 
 [node name="Bala" parent="Amazon1/alien" instance=ExtResource("7_u7oel")]
-position = Vector2(0, -170)
+position = Vector2(29.9995, -206)
+rotation = 1.57079
 scale = Vector2(1.4, 1.4)
+platform_on_leave = 2
 
-[connection signal="timeout" from="Amazon1/disparos amazon/Timer2" to="Amazon1/disparos amazon" method="_on_timer_timeout"]
-[connection signal="timeout" from="Amazon1/disparos amazon/reload_timer2" to="Amazon1/disparos amazon" method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="Amazon1/disparos amazon/Timer" to="Amazon1/disparos amazon" method="_on_timer_timeout"]

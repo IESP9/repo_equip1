@@ -8,8 +8,6 @@ process_priority = 1
 process_thread_group = 2
 process_thread_group_order = 0
 process_thread_messages = 0
-auto_translate_mode = 1
-scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 process_mode = 3
@@ -17,7 +15,6 @@ process_priority = 1
 process_thread_group = 2
 process_thread_group_order = 0
 process_thread_messages = 0
-auto_translate_mode = 1
 rotation = -1.5708
 motion_mirroring = Vector2(0, 50)
 
