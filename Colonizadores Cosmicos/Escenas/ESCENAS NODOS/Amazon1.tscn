@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhji3k2wb1tl3"]
+[gd_scene load_steps=5 format=3 uid="uid://dhji3k2wb1tl3"]
 
 [ext_resource type="Texture2D" uid="uid://booac114hw8xw" path="res://Sprites/tesla/Tesla1.png" id="1_df316"]
 [ext_resource type="Script" path="res://Scripts/Naves/amazon_1.gd" id="1_gvjro"]
 [ext_resource type="PackedScene" uid="uid://c2814bhlow0j8" path="res://Escenas/ESCENAS NODOS/partuculas_vuelo.tscn" id="3_ll25u"]
+[ext_resource type="PackedScene" uid="uid://4yly08iku4qj" path="res://Escenas/ESCENAS NODOS/disparos Amazon.tscn" id="4_v53xf"]
 
 [node name="Amazon1" type="CharacterBody2D" groups=["enemigos de aliens"]]
 motion_mode = 1
@@ -60,3 +61,14 @@ scale = Vector2(0.528314, 0.503774)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 0.785398
 polygon = PackedVector2Array(-37.899, 63.959, -77.163, 74.3346, -83.4348, 68.9164, -94.6938, 48.6942, -99.5605, 25.5729, -79.8204, 5.86105, -58.3776, -15.5818, -39.14, -9.05228, -38.9259, -18.6411, -29.7148, -28.0019, -18.1012, -38.5749, -7.29901, -38.909, -13.4239, -59.0656, 6.39856, -79.3336, 26.3324, -100.158, 48.4819, -93.7935, 69.2993, -83.1641, 75.3699, -76.832, 62.8948, -36.8969, 33.5387, 23.656, 23.6725, 33.5223)
+
+[node name="disparos" parent="." instance=ExtResource("4_v53xf")]
+visible = false
+position = Vector2(1, -21)
+
+[node name="Timer" type="Timer" parent="disparos"]
+wait_time = 10.0
+autostart = true
+
+[node name="pointshoot" type="Marker2D" parent="."]
+position = Vector2(0, -80)

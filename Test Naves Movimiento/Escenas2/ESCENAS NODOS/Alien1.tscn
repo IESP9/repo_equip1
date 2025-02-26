@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7ppdxc412o4b"]
+[gd_scene load_steps=13 format=3 uid="uid://b7ppdxc412o4b"]
 
 [ext_resource type="Texture2D" uid="uid://drlymrbq076yq" path="res://Sprites/marciano/Marciano.png" id="1_3ekb0"]
-[ext_resource type="Script" path="res://Scripts/Naves/enemigo.gd" id="1_8avxp"]
+[ext_resource type="Script" path="res://scripts/Naves/player.gd" id="1_8avxp"]
 [ext_resource type="Texture2D" uid="uid://cxoo0glnily2k" path="res://Sprites/Vuelo/Blue.png" id="2_rewyg"]
-[ext_resource type="Script" path="res://Escenas/ESCENAS NODOS/seguir.gd" id="4_uvwio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ba6ag"]
 atlas = ExtResource("1_3ekb0")
@@ -108,11 +107,35 @@ animations = [{
 "speed": 60.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvwio"]
-size = Vector2(98, 1375)
+[sub_resource type="GDScript" id="GDScript_01tyn"]
+script/source = "class_name seguir extends Node
 
-[node name="Player1" type="CharacterBody2D"]
-motion_mode = 1
+@export var speed: float = 40  # Velocidad de movimiento
+@export var shoot_interval: float = 5.0  # Intervalo entre disparos (5 segundos)
+const UPWARD_SPEED = -10.0  # Velocidad constante hacia arriba (en 2D, Y positivo es hacia abajo)
+
+
+@onready var Heroe: Area2D = $\"..\"
+#@onready var parent: Area2D = $\"..\" #su mismo parente
+
+var start_position
+
+func _ready() -> void:
+	#start_position = parent.position
+	pass
+
+func update_velocity():
+	pass
+
+func _physics_process(_delta) -> void:
+	update_velocity()
+	#parent.move_and_slide()
+
+func disable() -> void:
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED 
+"
+
+[node name="Player1" type="Area2D" groups=["enemigos de humanos"]]
 script = ExtResource("1_8avxp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -565,24 +588,12 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 rotation = 0.0033224
 scale = Vector2(0.4, 0.4)
 skew = -0.00664449
 polygon = PackedVector2Array(0.0802212, 344.763, -41.3268, 302.331, -60.7507, 275.174, -118.085, 226.115, -141.515, 186.953, -159.839, 108.214, -151.908, 36.8419, -82.7643, -147.975, -70.4123, -158.204, -15.0964, -328.847, -9.64465, -334.098, 1.66526, -272.034, 9.72218, -334.162, 14.5326, -329.272, 72.5578, -158.367, 82.9264, -148.145, 152.528, 36.1803, 160.872, 111.402, 140.876, 187.236, 117.882, 226.022, 61.3816, 276.832, 41.5454, 302.61)
 
 [node name="seguir" type="Node" parent="."]
-script = ExtResource("4_uvwio")
+script = SubResource("GDScript_01tyn")
 
-[node name="AreadeSeguir" type="Area2D" parent="."]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreadeSeguir"]
-position = Vector2(0, -552.5)
-shape = SubResource("RectangleShape2D_uvwio")
-
-[node name="PointShoot" type="Marker2D" parent="."]
-position = Vector2(0, -148)
-
-[connection signal="area_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_area_entered"]
-[connection signal="body_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_body_entered"]
+[node name="Timer" type="Timer" parent="."]

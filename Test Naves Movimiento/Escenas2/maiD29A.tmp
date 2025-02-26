@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://uuxbkutc4yx4"]
+
+[ext_resource type="Script" path="res://Escenas/player.gd" id="2_je0k2"]
+[ext_resource type="PackedScene" uid="uid://ccmeycfugjlx6" path="res://Escenas/player_1.tscn" id="2_lno61"]
+[ext_resource type="Texture2D" uid="uid://b47fd6c62strm" path="res://Sprites/Background/stars_milky_way.png" id="8_tyc2r"]
+
+[sub_resource type="GDScript" id="GDScript_usi2n"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_usi2n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-240, 80, 240, 80, 240, -632, -240, -632, -240, 80, -248, 88, -248, -640, 248, -640, 248, 88, -248, 88)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+process_mode = 3
+process_priority = 1
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+visible = false
+repeat_size = Vector2(20, 50)
+autoscroll = Vector2(50, 25)
+ignore_camera_scroll = true
+
+[node name="StarsMilkyWay" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(3847, -267)
+texture = ExtResource("8_tyc2r")
+
+[node name="camera" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="camera"]
+position = Vector2(1, -277)
+
+[node name="player" type="Node2D" parent="."]
+position = Vector2(0, -45)
+script = ExtResource("2_je0k2")
+speed = null
+
+[node name="Player1" parent="player" instance=ExtResource("2_lno61")]
+scale = Vector2(1.7, 1.7)

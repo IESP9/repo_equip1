@@ -8,7 +8,7 @@ const UPWARD_SPEED = -10.0  # Velocidad constante hacia arriba (en 2D, Y positiv
 @onready var parent: CharacterBody2D = $".." #su mismo parente
 
 var start_position
-var target: Heroe
+
 
 func _ready() -> void:
 	start_position = parent.position
@@ -25,6 +25,6 @@ func disable() -> void:
 
 func _on_areade_seguir_body_entered(body: Node2D) -> void:
 	print("¡Disparo!")
-	if body is Amazon1:
-		target = body
-		print("¡Disparo!")
+	#if body is Heroe:
+		#target = body
+		#print("¡Disparo!")

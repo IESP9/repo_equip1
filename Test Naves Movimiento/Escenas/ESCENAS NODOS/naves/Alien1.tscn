@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7ppdxc412o4b"]
+[gd_scene load_steps=13 format=3 uid="uid://duqid220p2rg6"]
 
 [ext_resource type="Texture2D" uid="uid://drlymrbq076yq" path="res://Sprites/marciano/Marciano.png" id="1_3ekb0"]
-[ext_resource type="Script" path="res://Scripts/Naves/enemigo.gd" id="1_8avxp"]
+[ext_resource type="Script" path="res://scripts/Naves/enemigo.gd" id="1_un6q7"]
 [ext_resource type="Texture2D" uid="uid://cxoo0glnily2k" path="res://Sprites/Vuelo/Blue.png" id="2_rewyg"]
-[ext_resource type="Script" path="res://Escenas/ESCENAS NODOS/seguir.gd" id="4_uvwio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ba6ag"]
 atlas = ExtResource("1_3ekb0")
@@ -108,12 +107,11 @@ animations = [{
 "speed": 60.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvwio"]
-size = Vector2(98, 1375)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkx55"]
+radius = 499.401
 
-[node name="Player1" type="CharacterBody2D"]
-motion_mode = 1
-script = ExtResource("1_8avxp")
+[node name="Alien" type="Area2D" groups=["enemigos de humanos"]]
+script = ExtResource("1_un6q7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -122,6 +120,7 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_2awuy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-85.1128, -75.7755)
@@ -131,6 +130,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-90.3696, -66.1696)
@@ -140,6 +140,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-157.067, -28.6149)
@@ -149,6 +150,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-162.297, -14.4211)
@@ -158,6 +160,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-156.886, -4.47079)
@@ -167,6 +170,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-209.171, 37.235)
@@ -176,6 +180,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-214.321, 47.3126)
@@ -185,6 +190,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-214.789, 56.46)
@@ -194,6 +200,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-175.771, 99.5611)
@@ -203,6 +210,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-177.176, 111.499)
@@ -212,6 +220,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-175.459, 123.437)
@@ -221,6 +230,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D44" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-80.1774, 185.234)
@@ -230,6 +240,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D45" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-71.5155, 176.108)
@@ -239,6 +250,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-223.998, 189.329)
@@ -248,6 +260,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-228.836, 201.577)
@@ -257,6 +270,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-228.836, 201.577)
@@ -266,6 +280,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-85.2542, -52.5683)
@@ -275,6 +290,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-56.7125, -96.4425)
@@ -285,6 +301,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D40" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-180.867, 28.976)
@@ -295,6 +312,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D41" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-123.121, 137.446)
@@ -305,6 +323,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D42" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(22.8201, 108.243)
@@ -315,6 +334,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D46" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-128.108, -38.5571)
@@ -325,6 +345,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D36" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(61.4051, 37.0591)
@@ -335,6 +356,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D37" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(70.8545, 37.059)
@@ -345,6 +367,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-121.087, 110.925)
@@ -355,6 +378,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D38" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(37.9781, 127.613)
@@ -365,6 +389,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D43" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-137.623, 123.18)
@@ -375,6 +400,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D39" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-28.9553, 180.544)
@@ -385,6 +411,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-107.821, -23.4947)
@@ -395,6 +422,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-36.4956, -71.7122)
@@ -405,6 +433,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-37.432, -61.7896)
@@ -415,6 +444,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(95.6988, 56.1959)
@@ -425,6 +455,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-124.004, 176.322)
@@ -435,6 +466,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-112.463, 175.908)
@@ -445,6 +477,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-99.9491, 175.079)
@@ -455,6 +488,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D25" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-57.262, 213.063)
@@ -465,6 +499,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D26" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-47.946, 213.201)
@@ -475,6 +510,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D27" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-38.2128, 208.781)
@@ -485,6 +521,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D30" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(4.30958, 156.632)
@@ -495,6 +532,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D31" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(13.4965, 161.587)
@@ -505,6 +543,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D32" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(27.1457, 156.893)
@@ -515,6 +554,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D33" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(52.0816, 86.2311)
@@ -525,6 +565,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D34" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(66.2557, 90.403)
@@ -535,6 +576,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D35" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(74.6552, 85.7096)
@@ -545,6 +587,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D28" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-202.009, 229.5)
@@ -555,6 +598,7 @@ autoplay = "default"
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D29" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
 show_behind_parent = true
 clip_children = 2
 position = Vector2(-189.495, 223.423)
@@ -571,18 +615,27 @@ scale = Vector2(0.4, 0.4)
 skew = -0.00664449
 polygon = PackedVector2Array(0.0802212, 344.763, -41.3268, 302.331, -60.7507, 275.174, -118.085, 226.115, -141.515, 186.953, -159.839, 108.214, -151.908, 36.8419, -82.7643, -147.975, -70.4123, -158.204, -15.0964, -328.847, -9.64465, -334.098, 1.66526, -272.034, 9.72218, -334.162, 14.5326, -329.272, 72.5578, -158.367, 82.9264, -148.145, 152.528, 36.1803, 160.872, 111.402, 140.876, 187.236, 117.882, 226.022, 61.3816, 276.832, 41.5454, 302.61)
 
-[node name="seguir" type="Node" parent="."]
-script = ExtResource("4_uvwio")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
 
-[node name="AreadeSeguir" type="Area2D" parent="."]
-collision_layer = 0
+[node name="puntero" type="Marker2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreadeSeguir"]
-position = Vector2(0, -552.5)
-shape = SubResource("RectangleShape2D_uvwio")
+[node name="barradevida" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -250.0
+offset_top = 160.0
+offset_right = 250.0
+offset_bottom = 200.0
+rotation = -3.14159
+pivot_offset = Vector2(250, 20)
 
-[node name="PointShoot" type="Marker2D" parent="."]
-position = Vector2(0, -148)
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
 
-[connection signal="area_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_area_entered"]
-[connection signal="body_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xkx55")
+
+[connection signal="area_entered" from="." to="." method="_on_area_recibir_dano_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_detectar_balas_entered"]
