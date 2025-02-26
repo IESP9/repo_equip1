@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf6o6qy8hmn3y"]
+[gd_scene load_steps=8 format=3 uid="uid://bf6o6qy8hmn3y"]
 
+[ext_resource type="Script" path="res://Scripts/Naves/utilidades de naves/Bala.gd" id="1_4n2dq"]
 [ext_resource type="Texture2D" uid="uid://c5bpkot8r62be" path="res://Sprites/Laser Sprites/01.png" id="1_8eh07"]
 [ext_resource type="Texture2D" uid="uid://eap0ytc12trb" path="res://Sprites/Laser Sprites/08.png" id="2_doq8e"]
 
@@ -43,6 +44,7 @@ height = 16.0
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 motion_mode = 1
+script = ExtResource("1_4n2dq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xpcho")
@@ -52,3 +54,7 @@ animation = &"simple_azul"
 position = Vector2(3, 1.31134e-07)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_mawnl")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

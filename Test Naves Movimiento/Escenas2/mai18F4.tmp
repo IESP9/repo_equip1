@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://uuxbkutc4yx4"]
+
+[ext_resource type="PackedScene" uid="uid://dswh8kmdcp4ht" path="res://Escenas/Amazon1.tscn" id="2_vt1rs"]
+[ext_resource type="PackedScene" uid="uid://doosiyl70s828" path="res://Escenas/HUD.tscn" id="3_4jlka"]
+[ext_resource type="PackedScene" uid="uid://4yly08iku4qj" path="res://Escenas/disparos.tscn" id="4_r2key"]
+[ext_resource type="PackedScene" uid="uid://byg5ijsvc3bnj" path="res://Escenas/enemigo.tscn" id="5_kmt3b"]
+[ext_resource type="Texture2D" uid="uid://b47fd6c62strm" path="res://Sprites/Background/stars_milky_way.png" id="8_tyc2r"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+process_mode = 3
+process_priority = 1
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+rotation = -1.5708
+autoscroll = Vector2(150, 0)
+repeat_times = 22
+
+[node name="StarsMilkyWay" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("8_tyc2r")
+
+[node name="Amazon1" parent="." instance=ExtResource("2_vt1rs")]
+
+[node name="Camera2D" type="Camera2D" parent="Amazon1"]
+position = Vector2(0, -277)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Amazon1/Camera2D"]
+position = Vector2(0, 219)
+scale = Vector2(1.7, 1.7)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Amazon1/Camera2D/StaticBody2D"]
+polygon = PackedVector2Array(-240, 80, 240, 80, 240, -632, -240, -632, -240, 80, -248, 88, -248, -640, 248, -640, 248, 88, -248, 88)
+
+[node name="HUD" parent="Amazon1/Camera2D" instance=ExtResource("3_4jlka")]
+unique_name_in_owner = true
+offset_left = 423.0
+offset_top = -323.0
+offset_right = 575.0
+offset_bottom = -209.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="disparos" parent="Amazon1" instance=ExtResource("4_r2key")]
+
+[node name="Enemigo" parent="." instance=ExtResource("5_kmt3b")]
+position = Vector2(0, -500)
+rotation = 3.14159

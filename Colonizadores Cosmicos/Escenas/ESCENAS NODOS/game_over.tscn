@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4ftbmi8lawnr"]
 
 [ext_resource type="FontFile" uid="uid://broig3dp0lwy5" path="res://Font/ThaleahFat.ttf" id="1_hn2vb"]
-[ext_resource type="Script" path="res://Scripts/escenas/game_over.gd" id="1_wccc4"]
+[ext_resource type="Script" uid="uid://co35splixk842" path="res://Scripts/escenas/game_over.gd" id="1_wccc4"]
 
 [sub_resource type="Theme" id="Theme_de3g6"]
 default_base_scale = 0.95

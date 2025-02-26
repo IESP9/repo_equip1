@@ -1,0 +1,202 @@
+[gd_scene load_steps=23 format=3 uid="uid://cef7aikdpplfj"]
+
+[ext_resource type="Texture2D" uid="uid://booac114hw8xw" path="res://Sprites/amazon/amazon1.png" id="1_df316"]
+[ext_resource type="Script" path="res://scripts/Naves/player.gd" id="1_gvjro"]
+[ext_resource type="Texture2D" uid="uid://cxu3kdmt4a1yp" path="res://Sprites/explosion.png" id="3_v53xf"]
+[ext_resource type="PackedScene" uid="uid://c2814bhlow0j8" path="res://Escenas2/ESCENAS NODOS/partuculas_vuelo.tscn" id="4_v53xf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83mst"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h154i"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvm27"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iarv"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t63f"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygnir"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5idws"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y60bh"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh2st"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcjqn"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfe2b"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjyhw"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx1mh"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xm0g"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb0yg"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nasfo"]
+atlas = ExtResource("3_v53xf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwhq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_df316")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_83mst")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_h154i")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_yvm27")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_1iarv")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_3t63f")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_ygnir")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_5idws")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_y60bh")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_bh2st")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_jcjqn")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_mfe2b")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_xjyhw")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_nx1mh")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_7xm0g")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_kb0yg")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_nasfo")
+}],
+"loop": true,
+"name": &"destroy",
+"speed": 60.0
+}]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83mst"]
+
+[node name="Amazon1" type="Area2D" groups=["enemigos de aliens"]]
+script = ExtResource("1_gvjro")
+
+[node name="Amazon1" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lwhq1")
+autoplay = "default"
+frame_progress = 0.47297
+
+[node name="partuculas vuelo" parent="Amazon1" instance=ExtResource("4_v53xf")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(-135.344, 33.6425)
+scale = Vector2(0.528314, 0.503774)
+
+[node name="partuculas vuelo2" parent="Amazon1" instance=ExtResource("4_v53xf")]
+show_behind_parent = true
+position = Vector2(-121.26, 48.7495)
+scale = Vector2(0.8, 0.8)
+
+[node name="partuculas vuelo3" parent="Amazon1" instance=ExtResource("4_v53xf")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(-85.6975, 55.9961)
+
+[node name="partuculas vuelo4" parent="Amazon1" instance=ExtResource("4_v53xf")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(-42.4046, 70.2283)
+scale = Vector2(1.2, 1.2)
+
+[node name="partuculas vuelo5" parent="Amazon1" instance=ExtResource("4_v53xf")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(42.405, 70.228)
+scale = Vector2(1.2, 1.2)
+
+[node name="partuculas vuelo6" parent="Amazon1" instance=ExtResource("4_v53xf")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(85.698, 55.996)
+
+[node name="partuculas vuelo7" parent="Amazon1" instance=ExtResource("4_v53xf")]
+show_behind_parent = true
+position = Vector2(121.26, 48.749)
+scale = Vector2(0.8, 0.8)
+
+[node name="partuculas vuelo8" parent="Amazon1" instance=ExtResource("4_v53xf")]
+physics_interpolation_mode = 0
+show_behind_parent = true
+position = Vector2(135.344, 33.643)
+scale = Vector2(0.528314, 0.503774)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+rotation = 0.785398
+polygon = PackedVector2Array(-37.899, 63.959, -77.163, 74.3346, -83.4348, 68.9164, -94.6938, 48.6942, -99.5605, 25.5729, -79.8204, 5.86105, -58.3776, -15.5818, -39.14, -9.05228, -38.9259, -18.6411, -29.7148, -28.0019, -18.1012, -38.5749, -7.29901, -38.909, -13.4239, -59.0656, 6.39856, -79.3336, 26.3324, -100.158, 48.4819, -93.7935, 69.2993, -83.1641, 75.3699, -76.832, 62.8948, -36.8969, 33.5387, 23.656, 23.6725, 33.5223)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_83mst")
+}
+
+[node name="Marker2D" type="Marker2D" parent="."]

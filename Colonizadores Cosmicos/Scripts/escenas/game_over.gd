@@ -4,10 +4,10 @@ extends Control
 @onready var restart_button: Button = $CanvasLayer/GameOverPanel/RestartButton
 @onready var exit_button: Button = $CanvasLayer/GameOverPanel/ExitButton
 
-func _ready():
-	game_over_panel.visible = false  # Al principio, el panel de Game Over está oculto
-	restart_button.connect("pressed", self, "_on_restart_pressed")
-	exit_button.connect("pressed", self, "_on_exit_pressed")
+#func _ready():
+	#game_over_panel.visible = false  # Al principio, el panel de Game Over está oculto
+	#restart_button.connect("pressed", self, "_on_restart_pressed")
+	#exit_button.connect("pressed", self, "_on_exit_pressed")
 
 # Llamar a esta función cuando el juego termine
 func game_over():

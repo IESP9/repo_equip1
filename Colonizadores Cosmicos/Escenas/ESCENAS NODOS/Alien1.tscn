@@ -573,8 +573,6 @@ polygon = PackedVector2Array(0.0802212, 344.763, -41.3268, 302.331, -60.7507, 27
 
 [node name="seguir" type="Node" parent="."]
 script = ExtResource("4_uvwio")
-speed = null
-shoot_interval = null
 
 [node name="AreadeSeguir" type="Area2D" parent="."]
 collision_layer = 0
@@ -582,6 +580,9 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreadeSeguir"]
 position = Vector2(0, -552.5)
 shape = SubResource("RectangleShape2D_uvwio")
+
+[node name="PointShoot" type="Marker2D" parent="."]
+position = Vector2(0, -148)
 
 [connection signal="area_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_area_entered"]
 [connection signal="body_entered" from="AreadeSeguir" to="seguir" method="_on_areade_seguir_body_entered"]
